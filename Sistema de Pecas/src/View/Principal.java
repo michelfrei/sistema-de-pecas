@@ -8,6 +8,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         ClienteView.setVisible(false);
         FuncionarioView.setVisible(false);
+        CampoAtivosCliente.getModel().setSelectedItem(null);
         TravaCamposCliente();
         TravaCamposFunc();
     }
@@ -50,7 +51,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void LimpaCamposCliente() {
         CampoNomeCliente.setText("");
-        CampoAtivosCliente.setText("");
+        CampoAtivosCliente.getModel().setSelectedItem(null);
         CampoCPFCliente.setText("");
         CampoCelularCliente.setText("");
         CampoCepCliente.setText("");
@@ -68,7 +69,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void TravaCamposFunc() {
         CampoNomeFunc.setEnabled(false);
-        CampoAtivoFunc.setEnabled(false);
+        CampoAtivosFunc.getModel().setSelectedItem(null);
         CampoCPFFunc.setEnabled(false);
         CampoCelularFunc.setEnabled(false);
         CampoEmailFunc.setEnabled(false);
@@ -84,7 +85,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void DestravaCamposFunc() {
         CampoNomeFunc.setEnabled(true);
-        CampoAtivoFunc.setEnabled(true);
+        CampoAtivosFunc.setEnabled(true);
         CampoCPFFunc.setEnabled(true);
         CampoCelularFunc.setEnabled(true);
         CampoEmailFunc.setEnabled(true);
@@ -108,7 +109,7 @@ public class Principal extends javax.swing.JFrame {
         CampoEmailFunc.setText("");
         CampoCelularFunc.setText("");
         CampoCPFFunc.setText("");
-        CampoAtivoFunc.setText("");
+        CampoAtivosFunc.getModel().setSelectedItem(null);
         CampoNomeFunc.setText("");
     }
 
@@ -153,9 +154,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         CampoDebitoCliente = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        CampoAtivosCliente = new javax.swing.JTextField();
         BotaoNovoCliente3 = new javax.swing.JButton();
         BotaoNovoCliente4 = new javax.swing.JButton();
+        CampoAtivosCliente = new javax.swing.JComboBox<>();
         FuncionarioView = new javax.swing.JInternalFrame();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -181,7 +182,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         CampoEmailFunc = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        CampoAtivoFunc = new javax.swing.JTextField();
         BotaoNovoCliente8 = new javax.swing.JButton();
         BotaoNovoCliente9 = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
@@ -191,6 +191,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         CampoSenhaFunc = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        CampoAtivosFunc = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         BtnChamadaCliente = new javax.swing.JMenuItem();
@@ -198,11 +199,15 @@ public class Principal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Sis. auto peças");
+        setPreferredSize(new java.awt.Dimension(1200, 840));
 
         ClienteView.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ClienteView.setClosable(true);
+        ClienteView.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         ClienteView.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        ClienteView.setOpaque(true);
         ClienteView.setVisible(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 246));
@@ -317,6 +322,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        CampoAtivosCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -409,7 +416,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoAtivosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CampoAtivosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -464,7 +471,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(CampoDebitoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16)
                     .addComponent(CampoAtivosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoNovoCliente1)
                     .addComponent(BotaoNovoCliente3)
@@ -485,6 +492,7 @@ public class Principal extends javax.swing.JFrame {
 
         FuncionarioView.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         FuncionarioView.setClosable(true);
+        FuncionarioView.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         FuncionarioView.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
         FuncionarioView.setVisible(true);
 
@@ -602,6 +610,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        CampoAtivosFunc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" }));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -653,27 +663,26 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(CampoNumeroCasaFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(223, 223, 223))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CampoCelularFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CampoEmailFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CampoNomeUsuarioCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CampoSenhaFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                                        .addComponent(jLabel32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CampoAtivoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoNomeUsuarioCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoSenhaFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoAtivosFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoCelularFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoEmailFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(70, 70, 70)))
                         .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -723,12 +732,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(CampoAtivoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30)
                     .addComponent(CampoNomeUsuarioCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31)
-                    .addComponent(CampoSenhaFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                    .addComponent(CampoSenhaFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoAtivosFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoSalvaFunc)
                     .addComponent(BotaoNovoCliente8)
@@ -770,7 +779,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ClienteView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FuncionarioView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(392, Short.MAX_VALUE))
+                .addContainerGap(348, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -824,6 +833,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnChamadaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnChamadaClienteActionPerformed
@@ -845,7 +855,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void BotaoNovoCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente1ActionPerformed
         if (CampoNomeCliente.getText().isEmpty()
-                || CampoAtivosCliente.getText().isEmpty()
+                || CampoAtivosCliente.getSelectedItem().equals(null)
                 || CampoCPFCliente.getText().isEmpty()
                 || CampoCelularCliente.getText().isEmpty()
                 || CampoCepCliente.getText().isEmpty()
@@ -899,16 +909,15 @@ public class Principal extends javax.swing.JFrame {
                 || CampoEmailFunc.getText().isEmpty()
                 || CampoCelularFunc.getText().isEmpty()
                 || CampoCPFFunc.getText().isEmpty()
-                || CampoAtivoFunc.getText().isEmpty()
+                || CampoAtivosFunc.getSelectedItem().equals(null)
                 || CampoNomeFunc.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Há campos não preenchidos", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
+            JOptionPane.showMessageDialog(null, "Há campos não preenchidos", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        } else {
             JOptionPane.showMessageDialog(null, "Salvo com sucesso", "Sistema", JOptionPane.INFORMATION_MESSAGE);
             LimpaCamposFunc();
             TravaCamposFunc();
         }
-        
+
     }//GEN-LAST:event_BotaoSalvaFuncActionPerformed
 
     private void BotaoBuscaFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscaFuncActionPerformed
@@ -932,7 +941,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoTipoFuncActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -970,8 +979,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton BotaoSalvaFunc;
     private javax.swing.JMenuItem BtnChamadaCliente;
     private javax.swing.JMenuItem BtnChamadaFuncionario;
-    private javax.swing.JTextField CampoAtivoFunc;
-    private javax.swing.JTextField CampoAtivosCliente;
+    private javax.swing.JComboBox<String> CampoAtivosCliente;
+    private javax.swing.JComboBox<String> CampoAtivosFunc;
     private javax.swing.JTextField CampoCPFCliente;
     private javax.swing.JTextField CampoCPFFunc;
     private javax.swing.JTextField CampoCelularCliente;
@@ -998,7 +1007,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField CampoTelefoneFunc;
     private javax.swing.JTextField CampoTipoFunc;
     private javax.swing.JInternalFrame ClienteView;
-    private javax.swing.JInternalFrame ClienteView1;
     private javax.swing.JInternalFrame FuncionarioView;
     private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -1036,7 +1044,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
