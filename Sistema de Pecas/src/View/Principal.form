@@ -172,11 +172,11 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="425" max="32767" attributes="0"/>
-                                  <Component id="BotaoNovoCliente6" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="BotaoSalvaProduto" min="-2" pref="135" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="BotaoNovoCliente10" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="BotaoAlteraProduto" min="-2" pref="135" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="BotaoNovoCliente11" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="BotaoDesativaProduto" min="-2" pref="135" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
@@ -230,9 +230,9 @@
                                           <Component id="CampoAtivosProduto" min="-2" pref="159" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="BotaoNovoCliente5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BotaoNovoProduto" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="BotaoNovoCliente7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BotaoBuscaProduto" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -256,8 +256,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="BotaoNovoCliente5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoNovoCliente7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoNovoProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoBuscaProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -310,11 +310,11 @@
                               <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CampoAtivosProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="59" max="32767" attributes="0"/>
+                          <EmptySpace pref="63" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="BotaoNovoCliente6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoNovoCliente10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoNovoCliente11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoSalvaProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoAlteraProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoDesativaProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       </Group>
@@ -322,7 +322,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente5">
+                <Component class="javax.swing.JButton" name="BotaoNovoProduto">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -330,14 +330,14 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Novo Cliente"/>
+                    <Property name="text" type="java.lang.String" value="Novo Produto"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Cursor Padr&#xe3;o"/>
                     </Property>
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoProdutoActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel22">
@@ -372,7 +372,7 @@
                     <Property name="text" type="java.lang.String" value="Codigo de Barras:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente6">
+                <Component class="javax.swing.JButton" name="BotaoSalvaProduto">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -387,10 +387,10 @@
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente6ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoSalvaProdutoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente7">
+                <Component class="javax.swing.JButton" name="BotaoBuscaProduto">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -398,14 +398,14 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Buscar Cliente"/>
+                    <Property name="text" type="java.lang.String" value="Buscar Produto"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Cursor Padr&#xe3;o"/>
                     </Property>
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente7ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoBuscaProdutoActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CampoIdProduto">
@@ -510,7 +510,7 @@
                     <Property name="text" type="java.lang.String" value="Ativo:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente10">
+                <Component class="javax.swing.JButton" name="BotaoAlteraProduto">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -525,10 +525,10 @@
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente10ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAlteraProdutoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente11">
+                <Component class="javax.swing.JButton" name="BotaoDesativaProduto">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -543,15 +543,15 @@
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente11ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoDesativaProdutoActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="CampoAtivosProduto">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
-                        <StringItem index="0" value="Ativo"/>
-                        <StringItem index="1" value="Inativo"/>
+                        <StringItem index="0" value="true"/>
+                        <StringItem index="1" value="false"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -668,7 +668,7 @@
                                       <Group type="102" attributes="0">
                                           <Component id="BotaoNovoCliente" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="BotaoNovoCliente2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BotaoBuscaCliente" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -699,11 +699,11 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="BotaoNovoCliente1" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="BotaoSalvaCliente" min="-2" pref="135" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="BotaoNovoCliente3" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="BotaoAlteraCliente" min="-2" pref="135" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="BotaoNovoCliente4" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="BotaoDesativaCliente" min="-2" pref="135" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -743,7 +743,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="BotaoNovoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoNovoCliente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoBuscaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -797,9 +797,9 @@
                           </Group>
                           <EmptySpace pref="69" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="BotaoNovoCliente1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoNovoCliente3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoNovoCliente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoSalvaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoAlteraCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoDesativaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       </Group>
@@ -865,7 +865,7 @@
                     <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente1">
+                <Component class="javax.swing.JButton" name="BotaoSalvaCliente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -880,10 +880,10 @@
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoSalvaClienteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente2">
+                <Component class="javax.swing.JButton" name="BotaoBuscaCliente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -898,7 +898,7 @@
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoBuscaClienteActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CampoIdCliente">
@@ -1025,7 +1025,7 @@
                     <Property name="text" type="java.lang.String" value="Ativo:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente3">
+                <Component class="javax.swing.JButton" name="BotaoAlteraCliente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1040,10 +1040,10 @@
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAlteraClienteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="BotaoNovoCliente4">
+                <Component class="javax.swing.JButton" name="BotaoDesativaCliente">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1058,7 +1058,7 @@
                     <Property name="debugGraphicsOptions" type="int" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoNovoCliente4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoDesativaClienteActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="CampoAtivosCliente">

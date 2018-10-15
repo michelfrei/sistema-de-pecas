@@ -6,6 +6,7 @@ package Model;
  * @author Michel
  */
 public class ProdutoModel {
+    private int id;
     private String Tipo;
     private String Descricao;
     private String Detalhes;
@@ -24,7 +25,8 @@ public class ProdutoModel {
     public ProdutoModel(){
     }
 
-    public ProdutoModel(String Tipo, String Descricao, String Detalhes, String Marca, String Origem, String CodigoDeBarras, String Fabricante, String Setor, String UnitMedida, double Peso, String Medidas, String Foto, int Estoque, boolean Ativo) {
+    public ProdutoModel(int id, String Tipo, String Descricao, String Detalhes, String Marca, String Origem, String CodigoDeBarras, String Fabricante, String Setor, String UnitMedida, double Peso, String Medidas, String Foto, int Estoque, boolean Ativo) {
+        this.id = id;
         this.Tipo = Tipo;
         this.Descricao = Descricao;
         this.Detalhes = Detalhes;
@@ -40,7 +42,13 @@ public class ProdutoModel {
         this.Estoque = Estoque;
         this.Ativo = Ativo;
     }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getTipo() {
         return Tipo;
     }
@@ -152,8 +160,5 @@ public class ProdutoModel {
     public void setAtivo(boolean Ativo) {
         this.Ativo = Ativo;
     }
-    
-    
-    
-    
+
 }

@@ -2,7 +2,11 @@ package View;
 
 import javax.swing.JOptionPane;
 
+import Model.*;
+import DAO.*;
 public class Principal extends javax.swing.JFrame {
+
+    ProdutoModel produtoModel = new ProdutoModel();
 
     public Principal() {
         initComponents();
@@ -176,13 +180,13 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         ProdutoView = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
-        BotaoNovoCliente5 = new javax.swing.JButton();
+        BotaoNovoProduto = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        BotaoNovoCliente6 = new javax.swing.JButton();
-        BotaoNovoCliente7 = new javax.swing.JButton();
+        BotaoSalvaProduto = new javax.swing.JButton();
+        BotaoBuscaProduto = new javax.swing.JButton();
         CampoIdProduto = new javax.swing.JTextField();
         CampoDescProduto = new javax.swing.JTextField();
         CampoDetalhesProduto = new javax.swing.JTextField();
@@ -204,8 +208,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         CampoMedidasProduto = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
-        BotaoNovoCliente10 = new javax.swing.JButton();
-        BotaoNovoCliente11 = new javax.swing.JButton();
+        BotaoAlteraProduto = new javax.swing.JButton();
+        BotaoDesativaProduto = new javax.swing.JButton();
         CampoAtivosProduto = new javax.swing.JComboBox<>();
         jLabel46 = new javax.swing.JLabel();
         CampoFotoProduto = new javax.swing.JTextField();
@@ -219,8 +223,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        BotaoNovoCliente1 = new javax.swing.JButton();
-        BotaoNovoCliente2 = new javax.swing.JButton();
+        BotaoSalvaCliente = new javax.swing.JButton();
+        BotaoBuscaCliente = new javax.swing.JButton();
         CampoIdCliente = new javax.swing.JTextField();
         CampoNomeCliente = new javax.swing.JTextField();
         CampoCPFCliente = new javax.swing.JTextField();
@@ -247,8 +251,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         CampoDebitoCliente = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        BotaoNovoCliente3 = new javax.swing.JButton();
-        BotaoNovoCliente4 = new javax.swing.JButton();
+        BotaoAlteraCliente = new javax.swing.JButton();
+        BotaoDesativaCliente = new javax.swing.JButton();
         CampoAtivosCliente = new javax.swing.JComboBox<>();
         FuncionarioView = new javax.swing.JInternalFrame();
         jPanel4 = new javax.swing.JPanel();
@@ -304,14 +308,14 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 246));
 
-        BotaoNovoCliente5.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente5.setText("Novo Cliente");
-        BotaoNovoCliente5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente5.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente5.addActionListener(new java.awt.event.ActionListener() {
+        BotaoNovoProduto.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoNovoProduto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoNovoProduto.setText("Novo Produto");
+        BotaoNovoProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoNovoProduto.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoNovoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente5ActionPerformed(evt);
+                BotaoNovoProdutoActionPerformed(evt);
             }
         });
 
@@ -327,25 +331,25 @@ public class Principal extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel34.setText("Codigo de Barras:");
 
-        BotaoNovoCliente6.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente6.setText("Salvar");
-        BotaoNovoCliente6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente6.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente6.addActionListener(new java.awt.event.ActionListener() {
+        BotaoSalvaProduto.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoSalvaProduto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoSalvaProduto.setText("Salvar");
+        BotaoSalvaProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoSalvaProduto.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoSalvaProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente6ActionPerformed(evt);
+                BotaoSalvaProdutoActionPerformed(evt);
             }
         });
 
-        BotaoNovoCliente7.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente7.setText("Buscar Cliente");
-        BotaoNovoCliente7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente7.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente7.addActionListener(new java.awt.event.ActionListener() {
+        BotaoBuscaProduto.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoBuscaProduto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoBuscaProduto.setText("Buscar Produto");
+        BotaoBuscaProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoBuscaProduto.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoBuscaProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente7ActionPerformed(evt);
+                BotaoBuscaProdutoActionPerformed(evt);
             }
         });
 
@@ -383,29 +387,29 @@ public class Principal extends javax.swing.JFrame {
         jLabel45.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel45.setText("Ativo:");
 
-        BotaoNovoCliente10.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente10.setText("Alterar");
-        BotaoNovoCliente10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente10.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente10.addActionListener(new java.awt.event.ActionListener() {
+        BotaoAlteraProduto.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoAlteraProduto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoAlteraProduto.setText("Alterar");
+        BotaoAlteraProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoAlteraProduto.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoAlteraProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente10ActionPerformed(evt);
+                BotaoAlteraProdutoActionPerformed(evt);
             }
         });
 
-        BotaoNovoCliente11.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente11.setText("Desativar");
-        BotaoNovoCliente11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente11.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente11.addActionListener(new java.awt.event.ActionListener() {
+        BotaoDesativaProduto.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoDesativaProduto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoDesativaProduto.setText("Desativar");
+        BotaoDesativaProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoDesativaProduto.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoDesativaProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente11ActionPerformed(evt);
+                BotaoDesativaProdutoActionPerformed(evt);
             }
         });
 
-        CampoAtivosProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" }));
+        CampoAtivosProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel46.setText("Foto:");
@@ -430,11 +434,11 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(CampoDescProduto))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 425, Short.MAX_VALUE)
-                        .addComponent(BotaoNovoCliente6, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoSalvaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoNovoCliente10, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoAlteraProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoNovoCliente11, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BotaoDesativaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -482,9 +486,9 @@ public class Principal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CampoAtivosProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(BotaoNovoCliente5)
+                                .addComponent(BotaoNovoProduto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BotaoNovoCliente7)))
+                                .addComponent(BotaoBuscaProduto)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel34)
@@ -501,8 +505,8 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotaoNovoCliente5)
-                    .addComponent(BotaoNovoCliente7))
+                    .addComponent(BotaoNovoProduto)
+                    .addComponent(BotaoBuscaProduto))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
@@ -547,11 +551,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
                     .addComponent(CampoAtivosProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotaoNovoCliente6)
-                    .addComponent(BotaoNovoCliente10)
-                    .addComponent(BotaoNovoCliente11))
+                    .addComponent(BotaoSalvaProduto)
+                    .addComponent(BotaoAlteraProduto)
+                    .addComponent(BotaoDesativaProduto))
                 .addGap(58, 58, 58))
         );
 
@@ -601,25 +605,25 @@ public class Principal extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Endereço:");
 
-        BotaoNovoCliente1.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente1.setText("Salvar");
-        BotaoNovoCliente1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente1.addActionListener(new java.awt.event.ActionListener() {
+        BotaoSalvaCliente.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoSalvaCliente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoSalvaCliente.setText("Salvar");
+        BotaoSalvaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoSalvaCliente.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoSalvaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente1ActionPerformed(evt);
+                BotaoSalvaClienteActionPerformed(evt);
             }
         });
 
-        BotaoNovoCliente2.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente2.setText("Buscar Cliente");
-        BotaoNovoCliente2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente2.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente2.addActionListener(new java.awt.event.ActionListener() {
+        BotaoBuscaCliente.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoBuscaCliente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoBuscaCliente.setText("Buscar Cliente");
+        BotaoBuscaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoBuscaCliente.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoBuscaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente2ActionPerformed(evt);
+                BotaoBuscaClienteActionPerformed(evt);
             }
         });
 
@@ -663,25 +667,25 @@ public class Principal extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Ativo:");
 
-        BotaoNovoCliente3.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente3.setText("Alterar");
-        BotaoNovoCliente3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente3.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente3.addActionListener(new java.awt.event.ActionListener() {
+        BotaoAlteraCliente.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoAlteraCliente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoAlteraCliente.setText("Alterar");
+        BotaoAlteraCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoAlteraCliente.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoAlteraCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente3ActionPerformed(evt);
+                BotaoAlteraClienteActionPerformed(evt);
             }
         });
 
-        BotaoNovoCliente4.setBackground(new java.awt.Color(255, 255, 255));
-        BotaoNovoCliente4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BotaoNovoCliente4.setText("Desativar");
-        BotaoNovoCliente4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCliente4.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        BotaoNovoCliente4.addActionListener(new java.awt.event.ActionListener() {
+        BotaoDesativaCliente.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoDesativaCliente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoDesativaCliente.setText("Desativar");
+        BotaoDesativaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoDesativaCliente.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoDesativaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCliente4ActionPerformed(evt);
+                BotaoDesativaClienteActionPerformed(evt);
             }
         });
 
@@ -729,7 +733,7 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(BotaoNovoCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BotaoNovoCliente2))
+                                .addComponent(BotaoBuscaCliente))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -753,11 +757,11 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(CampoCidadeCliente))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BotaoNovoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoSalvaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoNovoCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoAlteraCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoNovoCliente4, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BotaoDesativaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -789,7 +793,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoNovoCliente)
-                    .addComponent(BotaoNovoCliente2))
+                    .addComponent(BotaoBuscaCliente))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -836,9 +840,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(CampoAtivosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotaoNovoCliente1)
-                    .addComponent(BotaoNovoCliente3)
-                    .addComponent(BotaoNovoCliente4))
+                    .addComponent(BotaoSalvaCliente)
+                    .addComponent(BotaoAlteraCliente)
+                    .addComponent(BotaoDesativaCliente))
                 .addGap(58, 58, 58))
         );
 
@@ -1217,8 +1221,8 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BotaoNovoClienteActionPerformed
 
-    private void BotaoNovoCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente1ActionPerformed
-        if (    CampoNomeCliente.getText().isEmpty()
+    private void BotaoSalvaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvaClienteActionPerformed
+        if (CampoNomeCliente.getText().isEmpty()
                 || CampoAtivosCliente.getSelectedItem().equals(null)
                 || CampoCPFCliente.getText().isEmpty()
                 || CampoCelularCliente.getText().isEmpty()
@@ -1240,23 +1244,23 @@ public class Principal extends javax.swing.JFrame {
             TravaCamposCliente();
         }
 
-    }//GEN-LAST:event_BotaoNovoCliente1ActionPerformed
+    }//GEN-LAST:event_BotaoSalvaClienteActionPerformed
 
-    private void BotaoNovoCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente2ActionPerformed
+    private void BotaoBuscaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscaClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoNovoCliente2ActionPerformed
+    }//GEN-LAST:event_BotaoBuscaClienteActionPerformed
 
     private void CampoIdClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdClienteActionPerformed
 
-    private void BotaoNovoCliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente3ActionPerformed
+    private void BotaoAlteraClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlteraClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoNovoCliente3ActionPerformed
+    }//GEN-LAST:event_BotaoAlteraClienteActionPerformed
 
-    private void BotaoNovoCliente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente4ActionPerformed
+    private void BotaoDesativaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDesativaClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoNovoCliente4ActionPerformed
+    }//GEN-LAST:event_BotaoDesativaClienteActionPerformed
 
     private void BotaoNovoFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoFuncActionPerformed
         DestravaCamposFunc();
@@ -1308,12 +1312,12 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void BotaoNovoCliente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente5ActionPerformed
+    private void BotaoNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoProdutoActionPerformed
         DestravaCamposProd();
-    }//GEN-LAST:event_BotaoNovoCliente5ActionPerformed
+    }//GEN-LAST:event_BotaoNovoProdutoActionPerformed
 
-    private void BotaoNovoCliente6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente6ActionPerformed
-        if (    CampoTipoProduto.getText().isEmpty()
+    private void BotaoSalvaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvaProdutoActionPerformed
+        if (CampoTipoProduto.getText().isEmpty()
                 || CampoDescProduto.getText().isEmpty()
                 || CampoDetalhesProduto.getText().isEmpty()
                 || CampoMarcaProduto.getText().isEmpty()
@@ -1329,28 +1333,52 @@ public class Principal extends javax.swing.JFrame {
                 || CampoAtivosProduto.getModel().getSelectedItem().equals(null)) {
             JOptionPane.showMessageDialog(null, "Há campos não preenchidos", "Sistema", JOptionPane.INFORMATION_MESSAGE);
         } else {
+            try {
+                produtoModel.getId();
+                produtoModel.setTipo(CampoTipoProduto.getText()); 
+                produtoModel.setDescricao(CampoDescProduto.getText());
+                produtoModel.setDetalhes(CampoDetalhesProduto.getText());
+                produtoModel.setMarca(CampoMarcaProduto.getText());
+                produtoModel.setOrigem(CampoOrigemProduto.getText());
+                produtoModel.setCodigoDeBarras(CampoCodigoDeBarrasProduto.getText());
+                produtoModel.setFabricante(CampoFabricanteProduto.getText());
+                produtoModel.setSetor(CampoSetorProduto.getText());
+                produtoModel.setUnitMedida(CampoUnidadeDeMedidaProduto.getText());
+                produtoModel.setPeso(Double.parseDouble (CampoPesoProduto.getText()));
+                produtoModel.setMedidas(CampoMedidasProduto.getText());
+                produtoModel.setFoto(CampoFotoProduto.getText());
+                produtoModel.setEstoque(Integer.parseInt(CampoEstoqueProduto.getText()));
+                produtoModel.setAtivo(Boolean.parseBoolean((String) CampoAtivosProduto.getSelectedItem()));
+                //Bool.parseBool(
+                
+                ProdutoDAO produtoDAO = new ProdutoDAO();
+                produtoDAO.InserirNovoProduto(produtoModel);
+                
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
+            }
             JOptionPane.showMessageDialog(null, "Salvo com sucesso", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-            LimpaCamposProd();
-            TravaCamposProd();
+            
         }
 
-    }//GEN-LAST:event_BotaoNovoCliente6ActionPerformed
+    }//GEN-LAST:event_BotaoSalvaProdutoActionPerformed
 
-    private void BotaoNovoCliente7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente7ActionPerformed
+    private void BotaoBuscaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscaProdutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoNovoCliente7ActionPerformed
+    }//GEN-LAST:event_BotaoBuscaProdutoActionPerformed
 
     private void CampoIdProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdProdutoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdProdutoActionPerformed
 
-    private void BotaoNovoCliente10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente10ActionPerformed
+    private void BotaoAlteraProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlteraProdutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoNovoCliente10ActionPerformed
+    }//GEN-LAST:event_BotaoAlteraProdutoActionPerformed
 
-    private void BotaoNovoCliente11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCliente11ActionPerformed
+    private void BotaoDesativaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDesativaProdutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoNovoCliente11ActionPerformed
+    }//GEN-LAST:event_BotaoDesativaProdutoActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         ProdutoView.setVisible(true);
@@ -1379,21 +1407,21 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoAlteraCliente;
+    private javax.swing.JButton BotaoAlteraProduto;
+    private javax.swing.JButton BotaoBuscaCliente;
     private javax.swing.JButton BotaoBuscaFunc;
+    private javax.swing.JButton BotaoBuscaProduto;
+    private javax.swing.JButton BotaoDesativaCliente;
+    private javax.swing.JButton BotaoDesativaProduto;
     private javax.swing.JButton BotaoNovoCliente;
-    private javax.swing.JButton BotaoNovoCliente1;
-    private javax.swing.JButton BotaoNovoCliente10;
-    private javax.swing.JButton BotaoNovoCliente11;
-    private javax.swing.JButton BotaoNovoCliente2;
-    private javax.swing.JButton BotaoNovoCliente3;
-    private javax.swing.JButton BotaoNovoCliente4;
-    private javax.swing.JButton BotaoNovoCliente5;
-    private javax.swing.JButton BotaoNovoCliente6;
-    private javax.swing.JButton BotaoNovoCliente7;
     private javax.swing.JButton BotaoNovoCliente8;
     private javax.swing.JButton BotaoNovoCliente9;
     private javax.swing.JButton BotaoNovoFunc;
+    private javax.swing.JButton BotaoNovoProduto;
+    private javax.swing.JButton BotaoSalvaCliente;
     private javax.swing.JButton BotaoSalvaFunc;
+    private javax.swing.JButton BotaoSalvaProduto;
     private javax.swing.JMenuItem BtnChamadaCliente;
     private javax.swing.JMenuItem BtnChamadaFuncionario;
     private javax.swing.JComboBox<String> CampoAtivosCliente;
