@@ -4,6 +4,11 @@ import javax.swing.JOptionPane;
 
 import Model.*;
 import DAO.*;
+
+/**
+ *
+ * @author Michel
+ */
 public class Principal extends javax.swing.JFrame {
 
     ProdutoModel produtoModel = new ProdutoModel();
@@ -19,6 +24,7 @@ public class Principal extends javax.swing.JFrame {
         TravaCamposCliente();
         TravaCamposFunc();
         TravaCamposProd();
+        TravaBtFuncionario();
     }
 
     public void TravaCamposCliente() {
@@ -172,7 +178,13 @@ public class Principal extends javax.swing.JFrame {
         CampoEstoqueProduto.setText("");
         CampoAtivosProduto.getModel().setSelectedItem(null);
     }
-
+    
+    public void TravaBtFuncionario(){
+        BotaoOkProduto.setEnabled(false);
+    }
+    public void DestravaBtFuncionario(){
+        BotaoOkProduto.setEnabled(true);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -215,6 +227,7 @@ public class Principal extends javax.swing.JFrame {
         CampoFotoProduto = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         CampoEstoqueProduto = new javax.swing.JTextField();
+        BotaoOkProduto = new javax.swing.JButton();
         ClienteView = new javax.swing.JInternalFrame();
         jPanel1 = new javax.swing.JPanel();
         BotaoNovoCliente = new javax.swing.JButton();
@@ -417,6 +430,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel47.setText("Estoque:");
 
+        BotaoOkProduto.setBackground(new java.awt.Color(255, 255, 255));
+        BotaoOkProduto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BotaoOkProduto.setText("ok");
+        BotaoOkProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoOkProduto.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        BotaoOkProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoOkProdutoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -424,21 +448,6 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CampoDescProduto))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 425, Short.MAX_VALUE)
-                        .addComponent(BotaoSalvaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoAlteraProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoDesativaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -464,7 +473,21 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CampoUnidadeDeMedidaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CampoCodigoDeBarrasProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel35)
+                        .addGap(8, 8, 8)
+                        .addComponent(CampoTipoProduto))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BotaoOkProduto))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel43)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -489,15 +512,20 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(BotaoNovoProduto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BotaoBuscaProduto)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoCodigoDeBarrasProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel35)
-                        .addGap(8, 8, 8)
-                        .addComponent(CampoTipoProduto)))
+                        .addGap(0, 82, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoDescProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(BotaoSalvaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotaoAlteraProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotaoDesativaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -512,8 +540,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel24)
                     .addComponent(jLabel22)
                     .addComponent(CampoIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CampoDescProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(CampoDescProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoOkProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 26, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(CampoDetalhesProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -551,12 +580,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
                     .addComponent(CampoAtivosProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGap(56, 56, 56)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoSalvaProduto)
                     .addComponent(BotaoAlteraProduto)
                     .addComponent(BotaoDesativaProduto))
-                .addGap(58, 58, 58))
+                .addGap(70, 70, 70))
         );
 
         javax.swing.GroupLayout ProdutoViewLayout = new javax.swing.GroupLayout(ProdutoView.getContentPane());
@@ -1350,22 +1379,36 @@ public class Principal extends javax.swing.JFrame {
                 produtoModel.setEstoque(Integer.parseInt(CampoEstoqueProduto.getText()));
                 produtoModel.setAtivo(Boolean.parseBoolean((String) CampoAtivosProduto.getSelectedItem()));
                 //Bool.parseBool(
-                
+                //produtoModel.setPeso(Double.parseDouble (CampoPesoProduto.getText()));
                 ProdutoDAO produtoDAO = new ProdutoDAO();
                 produtoDAO.InserirNovoProduto(produtoModel);
-                
+                LimpaCamposProd();
+                TravaCamposProd();
+                JOptionPane.showMessageDialog(null, "Salvo com sucesso", "Sistema", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
             }
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+            
             
         }
 
     }//GEN-LAST:event_BotaoSalvaProdutoActionPerformed
 
     private void BotaoBuscaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscaProdutoActionPerformed
-        // TODO add your handling code here:
+        DestravaBtFuncionario();
+        CampoIdProduto.setEnabled(true);
+        
+        try {
+
+            if (!CampoIdProduto.getText().isEmpty()) {
+                produtoModel.setId(Integer.parseInt(CampoIdProduto.getText()));
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        
     }//GEN-LAST:event_BotaoBuscaProdutoActionPerformed
 
     private void CampoIdProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdProdutoActionPerformed
@@ -1384,9 +1427,11 @@ public class Principal extends javax.swing.JFrame {
         ProdutoView.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void BotaoOkProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoOkProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoOkProdutoActionPerformed
+
+
     public static void LookAndFeel() {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1419,6 +1464,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton BotaoNovoCliente9;
     private javax.swing.JButton BotaoNovoFunc;
     private javax.swing.JButton BotaoNovoProduto;
+    private javax.swing.JButton BotaoOkProduto;
     private javax.swing.JButton BotaoSalvaCliente;
     private javax.swing.JButton BotaoSalvaFunc;
     private javax.swing.JButton BotaoSalvaProduto;

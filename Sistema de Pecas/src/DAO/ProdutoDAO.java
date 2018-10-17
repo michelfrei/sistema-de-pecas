@@ -12,18 +12,19 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import Model.ProdutoModel;
+
 /**
  *
  * @author Michel
  */
 public class ProdutoDAO {
         public void InserirNovoProduto(ProdutoModel prod) {
-        String SQL = "INSERT INTO produto (id, tipo, descricao, detalhes, marca, origem, codigo_de_barras, fabricante, setor, unidade_medida, peso, medidas, foto, estoque, ativo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO produto (id, tipo, descricao, detalhes, marca, origem, codigo_de_barras, fabricante, setor, unidade_medida, peso, medidas, foto, estoque, ativo) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
             
-            stmt.setInt(1, prod.getId());
+            stmt.setInt(1, 0);
             stmt.setString(2, prod.getTipo());
             stmt.setString(3, prod.getDescricao());
             stmt.setString(4, prod.getDetalhes());
@@ -33,7 +34,7 @@ public class ProdutoDAO {
             stmt.setString(8, prod.getFabricante());
             stmt.setString(9, prod.getSetor());
             stmt.setString(10, prod.getUnitMedida());
-            stmt.setDouble(11, prod.getPeso());
+            stmt.setDouble(11,  prod.getPeso());
             stmt.setString(12, prod.getMedidas());
             stmt.setString(13, prod.getFoto());
             stmt.setInt(14, prod.getEstoque());
