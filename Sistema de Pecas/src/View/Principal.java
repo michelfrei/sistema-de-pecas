@@ -135,7 +135,7 @@ public class Principal extends javax.swing.JFrame {
     //--------------
     public void TravaCamposProd() {
         CampoIdProduto.setEnabled(false);
-        
+
         CampoTipoProduto.setEnabled(false);
         CampoDescProduto.setEnabled(false);
         CampoDetalhesProduto.setEnabled(false);
@@ -149,7 +149,7 @@ public class Principal extends javax.swing.JFrame {
         CampoMedidasProduto.setEnabled(false);
         CampoFotoProduto.setEnabled(false);
         CampoEstoqueProduto.setEnabled(false);
-        CampoAtivosProduto.setEnabled(false);
+        //CampoAtivosProduto.setEnabled(false);
     }
 
     public void DestravaCamposProd() {
@@ -166,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
         CampoMedidasProduto.setEnabled(true);
         CampoFotoProduto.setEnabled(true);
         CampoEstoqueProduto.setEnabled(true);
-        CampoAtivosProduto.setEnabled(true);
+        //CampoAtivosProduto.setEnabled(true);
     }
 
     public void LimpaCamposProd() {
@@ -184,11 +184,11 @@ public class Principal extends javax.swing.JFrame {
         CampoMedidasProduto.setText("");
         CampoFotoProduto.setText("");
         CampoEstoqueProduto.setText("");
-        CampoAtivosProduto.getModel().setSelectedItem(null);
+        //CampoAtivosProduto.getModel().setSelectedItem(null);
     }
 
     public void TravaTudoProd() {
-        CampoAtivosProduto.getModel().setSelectedItem(null);
+        //CampoAtivosProduto.getModel().setSelectedItem(null);
         CampoIdProduto.setEnabled(false);
         CampoTipoProduto.setEnabled(true);
         CampoDescProduto.setEnabled(true);
@@ -203,14 +203,12 @@ public class Principal extends javax.swing.JFrame {
         CampoMedidasProduto.setEnabled(true);
         CampoFotoProduto.setEnabled(true);
         CampoEstoqueProduto.setEnabled(true);
-        CampoAtivosProduto.setEnabled(true);
+        //CampoAtivosProduto.setEnabled(true);
 
         BotaoSalvaProduto.setEnabled(false);
         BotaoAlteraProduto.setEnabled(false);
         BotaoDesativaProduto.setEnabled(false);
     }
-
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -246,10 +244,8 @@ public class Principal extends javax.swing.JFrame {
         CampoPesoProduto = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         CampoMedidasProduto = new javax.swing.JTextField();
-        jLabel45 = new javax.swing.JLabel();
         BotaoAlteraProduto = new javax.swing.JButton();
         BotaoDesativaProduto = new javax.swing.JButton();
-        CampoAtivosProduto = new javax.swing.JComboBox<>();
         jLabel46 = new javax.swing.JLabel();
         CampoFotoProduto = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
@@ -423,9 +419,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel44.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel44.setText("Medidas:");
 
-        jLabel45.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel45.setText("Ativo:");
-
         BotaoAlteraProduto.setBackground(new java.awt.Color(255, 255, 255));
         BotaoAlteraProduto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BotaoAlteraProduto.setText("Alterar");
@@ -447,8 +440,6 @@ public class Principal extends javax.swing.JFrame {
                 BotaoDesativaProdutoActionPerformed(evt);
             }
         });
-
-        CampoAtivosProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel46.setText("Foto:");
@@ -531,10 +522,6 @@ public class Principal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CampoEstoqueProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel45)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoAtivosProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(BotaoNovoProduto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BotaoBuscaProduto)))
@@ -603,11 +590,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(CampoFotoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel47)
                     .addComponent(CampoEstoqueProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(CampoAtivosProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
+                .addGap(94, 94, 94)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoSalvaProduto)
                     .addComponent(BotaoAlteraProduto)
@@ -1393,7 +1376,7 @@ public class Principal extends javax.swing.JFrame {
                 || CampoMedidasProduto.getText().isEmpty()
                 || CampoFotoProduto.getText().isEmpty()
                 || CampoEstoqueProduto.getText().isEmpty()
-                || CampoAtivosProduto.getModel().getSelectedItem().equals(null)) {
+                /*|| CampoAtivosProduto.getModel().getSelectedItem().equals(null)*/) {
             JOptionPane.showMessageDialog(null, "Há campos não preenchidos", "Sistema", JOptionPane.INFORMATION_MESSAGE);
         } else {
             try {
@@ -1411,7 +1394,7 @@ public class Principal extends javax.swing.JFrame {
                 produtoModel.setMedidas(CampoMedidasProduto.getText());
                 produtoModel.setFoto(CampoFotoProduto.getText());
                 produtoModel.setEstoque(Integer.parseInt(CampoEstoqueProduto.getText()));
-                produtoModel.setAtivo(Boolean.parseBoolean((String) CampoAtivosProduto.getSelectedItem()));
+                produtoModel.isAtivo();
 
                 ProdutoDAO produtoDAO = new ProdutoDAO();
                 produtoDAO.InserirNovoProduto(produtoModel);
@@ -1443,11 +1426,77 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoIdProdutoActionPerformed
 
     private void BotaoAlteraProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlteraProdutoActionPerformed
-        // TODO add your handling code here:
+        if (CampoTipoProduto.getText().isEmpty()
+                || CampoDescProduto.getText().isEmpty()
+                || CampoDetalhesProduto.getText().isEmpty()
+                || CampoMarcaProduto.getText().isEmpty()
+                || CampoOrigemProduto.getText().isEmpty()
+                || CampoCodigoDeBarrasProduto.getText().isEmpty()
+                || CampoFabricanteProduto.getText().isEmpty()
+                || CampoSetorProduto.getText().isEmpty()
+                || CampoUnidadeDeMedidaProduto.getText().isEmpty()
+                || CampoPesoProduto.getText().isEmpty()
+                || CampoMedidasProduto.getText().isEmpty()
+                || CampoFotoProduto.getText().isEmpty()
+                || CampoEstoqueProduto.getText().isEmpty()
+                /*|| CampoAtivosProduto.getModel().getSelectedItem().equals(null)*/) {
+            JOptionPane.showMessageDialog(null, "Há campos não preenchidos", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            try {
+                produtoModel.getId();
+                produtoModel.setTipo(CampoTipoProduto.getText());
+                produtoModel.setDescricao(CampoDescProduto.getText());
+                produtoModel.setDetalhes(CampoDetalhesProduto.getText());
+                produtoModel.setMarca(CampoMarcaProduto.getText());
+                produtoModel.setOrigem(CampoOrigemProduto.getText());
+                produtoModel.setCodigoDeBarras(CampoCodigoDeBarrasProduto.getText());
+                produtoModel.setFabricante(CampoFabricanteProduto.getText());
+                produtoModel.setSetor(CampoSetorProduto.getText());
+                produtoModel.setUnitMedida(CampoUnidadeDeMedidaProduto.getText());
+                produtoModel.setPeso(Double.parseDouble(CampoPesoProduto.getText()));
+                produtoModel.setMedidas(CampoMedidasProduto.getText());
+                produtoModel.setFoto(CampoFotoProduto.getText());
+                produtoModel.setEstoque(Integer.parseInt(CampoEstoqueProduto.getText()));
+                /*produtoModel.setAtivo(Boolean.parseBoolean((String) CampoAtivosProduto.getSelectedItem()));*/
+
+                if (JOptionPane.showConfirmDialog(null, "Deseja mesmo alterar esse produto?", "pergunta", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+                    ProdutoDAO produtoDAO = new ProdutoDAO();
+                    produtoDAO.AlterarProduto(produtoModel);
+                    LimpaCamposProd();
+                    TravaCamposProd();
+                    JOptionPane.showMessageDialog(null, "Alterado com sucesso", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+        }
     }//GEN-LAST:event_BotaoAlteraProdutoActionPerformed
 
     private void BotaoDesativaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDesativaProdutoActionPerformed
-        // TODO add your handling code here:
+         if (CampoIdProduto.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Há campos não preenchidos", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            try {
+                produtoModel.getId();
+               
+
+                if (JOptionPane.showConfirmDialog(null, "Deseja mesmo Remover esse produto?", "pergunta", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+                    ProdutoDAO produtoDAO = new ProdutoDAO();
+                    produtoDAO.DesativarProduto(produtoModel);
+                    LimpaCamposProd();
+                    TravaCamposProd();
+                    JOptionPane.showMessageDialog(null, "Removida com sucesso", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+        }
     }//GEN-LAST:event_BotaoDesativaProdutoActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -1467,7 +1516,6 @@ public class Principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BotaoOkProdutoActionPerformed
-
     public void BuscaRevista(ProdutoModel prod) throws SQLException {
 
         String SQL = "select * from produto where id = ?";
@@ -1476,28 +1524,27 @@ public class Principal extends javax.swing.JFrame {
         stmt.setInt(1, prod.getId());
 
         ResultSet rs = stmt.executeQuery();
-        if(rs.next()){
-        do{
-            CampoTipoProduto.setText(rs.getString("tipo"));
-            CampoDescProduto.setText(rs.getString("descricao"));
-            CampoDetalhesProduto.setText(rs.getString("detalhes"));
-            CampoMarcaProduto.setText(rs.getString("marca"));
-            CampoOrigemProduto.setText(rs.getString("origem"));
-            CampoCodigoDeBarrasProduto.setText(rs.getString("codigo_de_barras"));
-            CampoFabricanteProduto.setText(rs.getString("fabricante"));
-            CampoSetorProduto.setText(rs.getString("setor"));
-            CampoUnidadeDeMedidaProduto.setText(rs.getString("unidade_medida"));
-            CampoPesoProduto.setText(rs.getString("peso"));
-            CampoMedidasProduto.setText(rs.getString("medidas"));
-            CampoFotoProduto.setText(rs.getString("foto"));
-            CampoEstoqueProduto.setText(rs.getString("estoque"));
-            CampoAtivosProduto.setSelectedItem(Boolean.parseBoolean((String) rs.getString("ativo")));            
-            DestravaCamposProd();
-            CampoIdProduto.setEnabled(false);
-            BotaoSalvaProduto.setEnabled(false);
-        }while (rs.next());
-        }
-        else{
+        if (rs.next()) {
+            do {
+                CampoTipoProduto.setText(rs.getString("tipo"));
+                CampoDescProduto.setText(rs.getString("descricao"));
+                CampoDetalhesProduto.setText(rs.getString("detalhes"));
+                CampoMarcaProduto.setText(rs.getString("marca"));
+                CampoOrigemProduto.setText(rs.getString("origem"));
+                CampoCodigoDeBarrasProduto.setText(rs.getString("codigo_de_barras"));
+                CampoFabricanteProduto.setText(rs.getString("fabricante"));
+                CampoSetorProduto.setText(rs.getString("setor"));
+                CampoUnidadeDeMedidaProduto.setText(rs.getString("unidade_medida"));
+                CampoPesoProduto.setText(rs.getString("peso"));
+                CampoMedidasProduto.setText(rs.getString("medidas"));
+                CampoFotoProduto.setText(rs.getString("foto"));
+                CampoEstoqueProduto.setText(rs.getString("estoque"));
+                /*CampoAtivosProduto.setSelectedItem(Boolean.parseBoolean((String) rs.getString("ativo")));*/
+                DestravaCamposProd();
+                CampoIdProduto.setEnabled(false);
+                BotaoSalvaProduto.setEnabled(false);
+            } while (rs.next());
+        } else {
             JOptionPane.showMessageDialog(null, "Não existe esse ID", "Sistema", JOptionPane.INFORMATION_MESSAGE);
         }
         stmt.close();
@@ -1544,7 +1591,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem BtnChamadaFuncionario;
     private javax.swing.JComboBox<String> CampoAtivosCliente;
     private javax.swing.JComboBox<String> CampoAtivosFunc;
-    private javax.swing.JComboBox<String> CampoAtivosProduto;
     private javax.swing.JTextField CampoCPFCliente;
     private javax.swing.JTextField CampoCPFFunc;
     private javax.swing.JTextField CampoCelularCliente;
@@ -1627,7 +1673,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
