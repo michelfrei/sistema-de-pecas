@@ -4,6 +4,11 @@ import javax.swing.JOptionPane;
 
 import Model.*;
 import DAO.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,11 +25,11 @@ public class Principal extends javax.swing.JFrame {
         ProdutoView.setVisible(false);
         CampoAtivosCliente.getModel().setSelectedItem(null);
         CampoAtivosFunc.getModel().setSelectedItem(null);
-        CampoAtivosProduto.getModel().setSelectedItem(null);
         TravaCamposCliente();
         TravaCamposFunc();
         TravaCamposProd();
-        TravaBtFuncionario();
+        TravaTudoProd();
+        BotaoOkProduto.setEnabled(false);
     }
 
     public void TravaCamposCliente() {
@@ -129,6 +134,8 @@ public class Principal extends javax.swing.JFrame {
 
     //--------------
     public void TravaCamposProd() {
+        CampoIdProduto.setEnabled(false);
+        
         CampoTipoProduto.setEnabled(false);
         CampoDescProduto.setEnabled(false);
         CampoDetalhesProduto.setEnabled(false);
@@ -163,6 +170,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void LimpaCamposProd() {
+        CampoIdProduto.setText("");
         CampoTipoProduto.setText("");
         CampoDescProduto.setText("");
         CampoDetalhesProduto.setText("");
@@ -178,13 +186,32 @@ public class Principal extends javax.swing.JFrame {
         CampoEstoqueProduto.setText("");
         CampoAtivosProduto.getModel().setSelectedItem(null);
     }
-    
-    public void TravaBtFuncionario(){
-        BotaoOkProduto.setEnabled(false);
+
+    public void TravaTudoProd() {
+        CampoAtivosProduto.getModel().setSelectedItem(null);
+        CampoIdProduto.setEnabled(false);
+        CampoTipoProduto.setEnabled(true);
+        CampoDescProduto.setEnabled(true);
+        CampoDetalhesProduto.setEnabled(true);
+        CampoMarcaProduto.setEnabled(true);
+        CampoOrigemProduto.setEnabled(true);
+        CampoCodigoDeBarrasProduto.setEnabled(true);
+        CampoFabricanteProduto.setEnabled(true);
+        CampoSetorProduto.setEnabled(true);
+        CampoUnidadeDeMedidaProduto.setEnabled(true);
+        CampoPesoProduto.setEnabled(true);
+        CampoMedidasProduto.setEnabled(true);
+        CampoFotoProduto.setEnabled(true);
+        CampoEstoqueProduto.setEnabled(true);
+        CampoAtivosProduto.setEnabled(true);
+
+        BotaoSalvaProduto.setEnabled(false);
+        BotaoAlteraProduto.setEnabled(false);
+        BotaoDesativaProduto.setEnabled(false);
     }
-    public void DestravaBtFuncionario(){
-        BotaoOkProduto.setEnabled(true);
-    }
+
+
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -366,7 +393,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        CampoIdProduto.setEditable(false);
         CampoIdProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoIdProdutoActionPerformed(evt);
@@ -536,12 +562,13 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(BotaoNovoProduto)
                     .addComponent(BotaoBuscaProduto))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel22)
-                    .addComponent(CampoIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CampoDescProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoOkProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 26, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotaoOkProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel24)
+                        .addComponent(jLabel22)
+                        .addComponent(CampoIdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CampoDescProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
@@ -1343,6 +1370,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void BotaoNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoProdutoActionPerformed
         DestravaCamposProd();
+        LimpaCamposProd();
+        BotaoOkProduto.setEnabled(false);
+        CampoIdProduto.setEnabled(false);
+        CampoIdProduto.setEnabled(false);
+        BotaoSalvaProduto.setEnabled(true);
+        BotaoAlteraProduto.setEnabled(false);
+        BotaoDesativaProduto.setEnabled(false);
     }//GEN-LAST:event_BotaoNovoProdutoActionPerformed
 
     private void BotaoSalvaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvaProdutoActionPerformed
@@ -1364,7 +1398,7 @@ public class Principal extends javax.swing.JFrame {
         } else {
             try {
                 produtoModel.getId();
-                produtoModel.setTipo(CampoTipoProduto.getText()); 
+                produtoModel.setTipo(CampoTipoProduto.getText());
                 produtoModel.setDescricao(CampoDescProduto.getText());
                 produtoModel.setDetalhes(CampoDetalhesProduto.getText());
                 produtoModel.setMarca(CampoMarcaProduto.getText());
@@ -1373,13 +1407,12 @@ public class Principal extends javax.swing.JFrame {
                 produtoModel.setFabricante(CampoFabricanteProduto.getText());
                 produtoModel.setSetor(CampoSetorProduto.getText());
                 produtoModel.setUnitMedida(CampoUnidadeDeMedidaProduto.getText());
-                produtoModel.setPeso(Double.parseDouble (CampoPesoProduto.getText()));
+                produtoModel.setPeso(Double.parseDouble(CampoPesoProduto.getText()));
                 produtoModel.setMedidas(CampoMedidasProduto.getText());
                 produtoModel.setFoto(CampoFotoProduto.getText());
                 produtoModel.setEstoque(Integer.parseInt(CampoEstoqueProduto.getText()));
                 produtoModel.setAtivo(Boolean.parseBoolean((String) CampoAtivosProduto.getSelectedItem()));
-                //Bool.parseBool(
-                //produtoModel.setPeso(Double.parseDouble (CampoPesoProduto.getText()));
+
                 ProdutoDAO produtoDAO = new ProdutoDAO();
                 produtoDAO.InserirNovoProduto(produtoModel);
                 LimpaCamposProd();
@@ -1389,26 +1422,20 @@ public class Principal extends javax.swing.JFrame {
                 System.out.println(e.getMessage());
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
             }
-            
-            
+
         }
 
     }//GEN-LAST:event_BotaoSalvaProdutoActionPerformed
 
     private void BotaoBuscaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscaProdutoActionPerformed
-        DestravaBtFuncionario();
+        BotaoOkProduto.setEnabled(true);
         CampoIdProduto.setEnabled(true);
-        
-        try {
-
-            if (!CampoIdProduto.getText().isEmpty()) {
-                produtoModel.setId(Integer.parseInt(CampoIdProduto.getText()));
-            }
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-
-        
+        LimpaCamposProd();
+        TravaCamposProd();
+        CampoIdProduto.setEnabled(true);
+        BotaoSalvaProduto.setEnabled(false);
+        BotaoAlteraProduto.setEnabled(true);
+        BotaoDesativaProduto.setEnabled(true);
     }//GEN-LAST:event_BotaoBuscaProdutoActionPerformed
 
     private void CampoIdProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdProdutoActionPerformed
@@ -1428,9 +1455,54 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void BotaoOkProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoOkProdutoActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            if (!CampoIdProduto.getText().isEmpty()) {
+                produtoModel.setId(Integer.parseInt(CampoIdProduto.getText()));
+                BuscaRevista(produtoModel);
+
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }//GEN-LAST:event_BotaoOkProdutoActionPerformed
 
+    public void BuscaRevista(ProdutoModel prod) throws SQLException {
+
+        String SQL = "select * from produto where id = ?";
+
+        PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
+        stmt.setInt(1, prod.getId());
+
+        ResultSet rs = stmt.executeQuery();
+        if(rs.next()){
+        do{
+            CampoTipoProduto.setText(rs.getString("tipo"));
+            CampoDescProduto.setText(rs.getString("descricao"));
+            CampoDetalhesProduto.setText(rs.getString("detalhes"));
+            CampoMarcaProduto.setText(rs.getString("marca"));
+            CampoOrigemProduto.setText(rs.getString("origem"));
+            CampoCodigoDeBarrasProduto.setText(rs.getString("codigo_de_barras"));
+            CampoFabricanteProduto.setText(rs.getString("fabricante"));
+            CampoSetorProduto.setText(rs.getString("setor"));
+            CampoUnidadeDeMedidaProduto.setText(rs.getString("unidade_medida"));
+            CampoPesoProduto.setText(rs.getString("peso"));
+            CampoMedidasProduto.setText(rs.getString("medidas"));
+            CampoFotoProduto.setText(rs.getString("foto"));
+            CampoEstoqueProduto.setText(rs.getString("estoque"));
+            CampoAtivosProduto.setSelectedItem(Boolean.parseBoolean((String) rs.getString("ativo")));            
+            DestravaCamposProd();
+            CampoIdProduto.setEnabled(false);
+            BotaoSalvaProduto.setEnabled(false);
+        }while (rs.next());
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Não existe esse ID", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        }
+        stmt.close();
+        Conexao.getConexaoMySQL().close();
+    }
 
     public static void LookAndFeel() {
         try {

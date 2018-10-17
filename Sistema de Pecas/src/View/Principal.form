@@ -267,12 +267,14 @@
                               <Component id="BotaoBuscaProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CampoIdProduto" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CampoDescProduto" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoOkProduto" alignment="0" pref="26" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="BotaoOkProduto" alignment="0" pref="30" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoIdProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoDescProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -417,9 +419,6 @@
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CampoIdProduto">
-                  <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoIdProdutoActionPerformed"/>
                   </Events>

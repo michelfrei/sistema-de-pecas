@@ -1,6 +1,4 @@
-
 package DAO;
-
 
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -12,18 +10,19 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import Model.ProdutoModel;
-
+import View.*;
 /**
  *
  * @author Michel
  */
 public class ProdutoDAO {
-        public void InserirNovoProduto(ProdutoModel prod) {
+
+    public void InserirNovoProduto(ProdutoModel prod) {
         String SQL = "INSERT INTO produto (id, tipo, descricao, detalhes, marca, origem, codigo_de_barras, fabricante, setor, unidade_medida, peso, medidas, foto, estoque, ativo) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
-            
+
             stmt.setInt(1, 0);
             stmt.setString(2, prod.getTipo());
             stmt.setString(3, prod.getDescricao());
@@ -34,22 +33,22 @@ public class ProdutoDAO {
             stmt.setString(8, prod.getFabricante());
             stmt.setString(9, prod.getSetor());
             stmt.setString(10, prod.getUnitMedida());
-            stmt.setDouble(11,  prod.getPeso());
+            stmt.setDouble(11, prod.getPeso());
             stmt.setString(12, prod.getMedidas());
             stmt.setString(13, prod.getFoto());
             stmt.setInt(14, prod.getEstoque());
             stmt.setBoolean(15, prod.isAtivo());
-            
+
             stmt.execute();
             stmt.close();
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            
+
         }
     }
-        
-        public boolean RemoverProduto(ProdutoModel prod) throws SQLException {
+
+    public boolean RemoverProduto(ProdutoModel prod) throws SQLException {
         String SQL = "Delete from produto where id=?";
 
         try {
@@ -64,9 +63,9 @@ public class ProdutoDAO {
         }
         return true;
     }
-        
-        public boolean AlterarProduto(ProdutoModel prod) throws SQLException {// não ta funcionando
-        String SQL = SQL = "update sys.revista set tipo=?, descricao=?, detalhes=?, origem=?, codigo_de_barras=?, fabricante=?, setor=?, unidade_medida=?, peso=?, medidas=?, foto=?, estoque=?, ativo=? where id = ?";
+
+    public boolean AlterarProduto(ProdutoModel prod) throws SQLException {// não ta funcionando
+        String SQL = SQL = "update produto set tipo=?, descricao=?, detalhes=?, origem=?, codigo_de_barras=?, fabricante=?, setor=?, unidade_medida=?, peso=?, medidas=?, foto=?, estoque=?, ativo=? where id = ?";
 
         try {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
@@ -86,7 +85,7 @@ public class ProdutoDAO {
             stmt.setInt(12, prod.getEstoque());
             stmt.setBoolean(13, prod.isAtivo());
             stmt.setInt(14, prod.getId());
-            
+
             stmt.execute();
             stmt.close();
         } catch (SQLException ex) {
@@ -95,5 +94,5 @@ public class ProdutoDAO {
 
         return true;
     }
-    
+
 }
