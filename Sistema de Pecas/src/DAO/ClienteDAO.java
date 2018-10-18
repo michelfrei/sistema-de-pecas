@@ -68,7 +68,7 @@ public class ClienteDAO {
         return true;
     }
 
-    public boolean AlterarProduto(ClienteModel cli) throws SQLException {// não ta funcionando
+    public boolean AlterarProduto(ClienteModel cli) throws SQLException {
         String SQL = SQL = "update produto set nome_razao=?, cpf_cnpj=?, rg=?, endereco=?, numero=?, complemento=?, bairro=?, cidade=?, estado=?, cep=?, telefone=?, telefone2=?, email=?, vencimento=?, debito=?, where id = ?";
 
         try {
