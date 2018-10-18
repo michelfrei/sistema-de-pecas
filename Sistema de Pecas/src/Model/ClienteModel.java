@@ -7,17 +7,19 @@ package Model;
  */
 
 public class ClienteModel {
+    private int Id;
     private String NomeRazao;
     private String CPF_CNPJ;
     private String RG;
     private String Endereco;
     private int Numero;
     private String Complemento;
+    private String Bairro;
     private String Cidade;
     private String Estado;
     private String CEP;
     private String Telefone;
-    private String Celular;
+    private String Telefone2;
     private String Email;
     private String VencimentoConta;
     private double Debito;
@@ -26,22 +28,40 @@ public class ClienteModel {
     public ClienteModel(){
     }
 
-    public ClienteModel(String NomeRazao, String CPF_CNPJ, String RG, String Endereco, int Numero, String Complemento, String Cidade, String Estado, String CEP, String Telefone, String Celular, String Email, String VencimentoConta, double Debito, boolean Ativo) {
+    public ClienteModel(int Id, String NomeRazao, String CPF_CNPJ, String RG, String Endereco, int Numero, String Complemento, String Bairro, String Cidade, String Estado, String CEP, String Telefone, String Telefone2, String Email, String VencimentoConta, double Debito, boolean Ativo) {
+        this.Id = Id;
         this.NomeRazao = NomeRazao;
         this.CPF_CNPJ = CPF_CNPJ;
         this.RG = RG;
         this.Endereco = Endereco;
         this.Numero = Numero;
         this.Complemento = Complemento;
+        this.Bairro = Bairro;
         this.Cidade = Cidade;
         this.Estado = Estado;
         this.CEP = CEP;
         this.Telefone = Telefone;
-        this.Celular = Celular;
+        this.Telefone2 = Telefone2;
         this.Email = Email;
         this.VencimentoConta = VencimentoConta;
         this.Debito = Debito;
         this.Ativo = Ativo;
+    }
+    
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
+    }
+
+    public String getBairro() {
+        return Bairro;
+    }
+
+    public void setBairro(String Bairro) {
+        this.Bairro = Bairro;
     }
 
     public String getNomeRazao() {
@@ -124,12 +144,12 @@ public class ClienteModel {
         this.Telefone = Telefone;
     }
 
-    public String getCelular() {
-        return Celular;
+    public String getTelefone2() {
+        return Telefone2;
     }
 
-    public void setCelular(String Celular) {
-        this.Celular = Celular;
+    public void setTelefone2(String Celular) {
+        this.Telefone2 = Celular;
     }
 
     public String getEmail() {

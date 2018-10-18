@@ -1508,7 +1508,7 @@ public class Principal extends javax.swing.JFrame {
 
             if (!CampoIdProduto.getText().isEmpty()) {
                 produtoModel.setId(Integer.parseInt(CampoIdProduto.getText()));
-                BuscaRevista(produtoModel);
+                BuscaProduto(produtoModel);
 
             }
         } catch (Exception e) {
@@ -1516,7 +1516,7 @@ public class Principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BotaoOkProdutoActionPerformed
-    public void BuscaRevista(ProdutoModel prod) throws SQLException {
+    public void BuscaProduto(ProdutoModel prod) throws SQLException {
 
         String SQL = "select * from produto where id = ?";
 
