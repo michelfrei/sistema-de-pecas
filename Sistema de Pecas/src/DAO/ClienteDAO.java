@@ -18,8 +18,8 @@ import Model.ClienteModel;
  */
 public class ClienteDAO {
     
-    public void InserirNovoProduto(ClienteModel cli) {
-        String SQL = "INSERT INTO cliente (id, nome_razao, cpf_cnpj, rg, endereco, numero, complemento, bairro, cidade, estado, cep, telefone, telefone2, email, vencimento, debito, ativo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public void InserirNovoCliente(ClienteModel cli) {
+        String SQL = "INSERT INTO cli (id, nome_razao, cpf_cnpj, rg, endereco, numero, complemento, bairro, cidade, estado, cep, telefone, telefone2, email, vencimento, debito, ativo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
@@ -52,7 +52,7 @@ public class ClienteDAO {
     }
 
     public boolean DesativarCliente(ClienteModel cli) throws SQLException {
-        String SQL = "update produto set ativo = ? where id=?";
+        String SQL = "update cli set ativo = ? where id=?";
 
         try {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
@@ -68,8 +68,8 @@ public class ClienteDAO {
         return true;
     }
 
-    public boolean AlterarProduto(ClienteModel cli) throws SQLException {
-        String SQL = SQL = "update produto set nome_razao=?, cpf_cnpj=?, rg=?, endereco=?, numero=?, complemento=?, bairro=?, cidade=?, estado=?, cep=?, telefone=?, telefone2=?, email=?, vencimento=?, debito=?, where id = ?";
+    public boolean AlterarCliente(ClienteModel cli) throws SQLException {
+        String SQL = "update cli set nome_razao=?, cpf_cnpj=?, rg=?, endereco=?, numero=?, complemento=?, bairro=?, cidade=?, estado=?, cep=?, telefone=?, telefone2=?, email=?, vencimento=?, debito=?, where id = ?";
 
         try {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);

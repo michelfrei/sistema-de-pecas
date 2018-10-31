@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 
 import Model.ProdutoModel;
 import View.*;
+
 /**
  *
  * @author Michel
@@ -94,6 +95,42 @@ public class ProdutoDAO {
         }
 
         return true;
+    }
+
+    public List<ProdutoModel> ListaProduto() throws SQLException {
+
+        List<ProdutoModel> ListaProduto;
+        ListaProduto = new ArrayList<>();
+
+        String SQL = "select * from produto";
+        try {
+
+            PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                ListaProduto.add(new ProdutoModel(
+                rs.getInt("id"),
+                rs.getString("Tipo"),
+                rs.getString("descricao"),
+                rs.getString("detalhes"),
+                rs.getString("marca"),
+                rs.getString("origem"),
+                rs.getString("codigo_de_barras"),
+                rs.getString("fabricante"),
+                rs.getString("setor"),
+                rs.getString("unidade_medida"),
+                rs.getDouble("peso"),
+                rs.getString("medidas"),
+                rs.getString("foto"),
+                rs.getInt("estoque"),
+                rs.getBoolean("ativo")));
+
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return ListaProduto;
     }
 
 }
